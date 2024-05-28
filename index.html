@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator using javascript - easy tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" name="display">
+            </div>
+            <div>
+                <div id="button">
+                <input type="button" value="ac" onclick="appendvalue(this)">
+                <input type="button" value="de" onclick="appendValue(this)">
+                <input type="button" value="."onclick="appendvalue(this)">
+                <input type="button" value="/"onclick="appendValue(this)">
+            </div>
+            <div>
+                <input type="button" value="7" onclick="appendValue(this)">
+                <input type="button" value="8" onclick="appendValue(this)">
+                <input type="button" value="9" onclick="appendValue(this)">
+                <input type="button" value="*" onclick="appendValue(this)" class="operator">
+            </div>
+            <div>
+                <input type="button" value="4" onclick="appendValue(this)">
+                <input type="button" value="5" onclick="appendValue(this)">
+                <input type="button" value="6" onclick="appendValue(this)">
+                <input type="button" value="-" onclick="appendValue(this)" class="operator">
+            </div>
+            <div>
+                <input type="button" value="1" onclick="appendValue(this)">
+                <input type="button" value="2" onclick="appendValue(this)">
+                <input type="button" value="3" onclick="appendValue(this)">
+                <input type="button" value="+" onclick="appendValue(this)" class="operator">
+            </div>
+            <div>
+                <input type="button" value="00" onclick="appendValue(this)">
+                <input type="button" value="0"  onclick="appendValue(this)">
+                <input type="button" value="="  onclick="calculate()" class="equal">
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function appendValue(button) {
+            document.getElementsByName("display")[0].value += button.value;
+        }
+
+        function calculate() {
+            var result = eval(document.getElementsByName("display")[0].value);
+            document.getElementsByName("display")[0].value = result;
+        }
+    </script>
+</body>
+</html>
